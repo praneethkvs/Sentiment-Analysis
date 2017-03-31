@@ -4,7 +4,7 @@ library(tm)
 library(ggplot2)
 
 #Read in the Sentiment Dictionary which we will use later.
-dict <- read.csv("F:/R/senti_analysis/superdic.csv",stringsAsFactors = F)
+dict <- read.csv("sentimentdictionary.csv",stringsAsFactors = F)
 
 #The following keys are unique to each user, you can get yours by signing up for an app "https://apps.twitter.com/".
 consumer_key <- "EJfvJef43wxK5SytXH9ugB1MP"
