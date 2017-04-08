@@ -41,7 +41,7 @@ sentiment <- function(word,tweets_num=500) {
   sentiscoresdf$color <- ifelse(sentiscoresdf$Scores > 0,"positive",ifelse(sentiscoresdf$Scores == 0,"neutral","negative"))
   
   #Writes the resulting data frame to a file in the current working irectory and displays a bar plot of the Sentiment Score. 
-  list(write.csv(cbind(tweetsdf,Scores=sentiscores),paste0("./Scores/",word,"scores.csv"),row.names = F),
+  list(write.csv(cbind(tweetsdf,Scores=sentiscores),paste0(word,"scores.csv"),row.names = F),
             ggplot(data=sentiscoresdf,aes(x=Scores))+geom_bar(aes(fill=color))+
          ylab("No. Of Tweets")+xlab("Sentiment Score")+theme_minimal()+geom_text(stat="count",aes(label=..count..),vjust=-.5)
           +scale_x_continuous(breaks=c(-7:7))+scale_fill_manual(values = c(positive="steelblue",negative="firebrick1",neutral="yellowgreen")))
